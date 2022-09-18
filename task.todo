@@ -1,0 +1,19 @@
+playlist:
+    ✔ video 1 @done(22-09-16 14:41)
+    ✔ video 2 @done(22-09-16 14:41)
+    ✔ video 3 https://youtu.be/AoIn_xiol78?list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ @done(22-09-16 15:17)
+    ✔ video 4 @done(22-09-16 16:31)
+    ✔ video 5 @done(22-09-18 13:43)
+    ✔ video 6 @done(22-09-18 13:43)
+    ✔ video 7 @done(22-09-18 13:43)
+    ✔ video 8 @done(22-09-19 06:51)
+    ☐ video 9
+    ☐ video 10
+    ☐ video 11
+    ☐ video 12
+    ☐ video 13
+    ☐ video 14
+    ☐ video 15 
+
+error:
+    ☐ error call api openweathermap.org katanya nunggu verifikasi
