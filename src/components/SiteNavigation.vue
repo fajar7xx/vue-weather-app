@@ -1,6 +1,7 @@
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute, useRouter } from "vue-router";
 import { ref } from "vue";
+import { uid } from "uid";
 import BaseModal from "./BaseModal.vue";
 
 const modalActive = ref(false);
@@ -8,6 +9,34 @@ const toggleModalActive = () => {
   console.log("toggle modal");
   modalActive.value = !modalActive.value;
   console.log(modalActive.value);
+};
+
+const savedCities = ref([]);
+const route = useRoute();
+const router = useRouter();
+const addCity = () => {
+  if (localStorage.getItem("savedCities")) {
+    savedCities.value = JSON.parse(localStorage.getItem("savedCities"));
+  }
+
+  const locationObj = {
+    id: uid(),
+    state: route.params?.state,
+    city: route.params?.city,
+    coords: {
+      lat: route.query?.lat,
+      lng: route.query?.lng,
+    },
+  };
+
+  savedCities.value.push(locationObj);
+  localStorage.setItem("savedCities", JSON.stringify(savedCities.value));
+
+  let query = Object.assign({}, route.query);
+  delete query.preview;
+  router.replace({
+    query,
+  });
 };
 </script>
 
@@ -30,13 +59,12 @@ const toggleModalActive = () => {
         ></i>
         <i
           class="text-xl transition duration-150 cursor-pointer fa-solid fa-plus hover:text-weather-primary"
+          v-if="route.query.preview"
+          @click="addCity"
         ></i>
       </div>
 
-      <BaseModal 
-        :modalActive="modalActive" 
-        @close-modal="toggleModalActive"
-        >
+      <BaseModal :modalActive="modalActive" @close-modal="toggleModalActive">
         <div class="text-black">
           <h1 class="mb-1 text-2xl">About:</h1>
           <p class="mb-4">
