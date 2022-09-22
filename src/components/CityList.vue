@@ -27,6 +27,9 @@ const getCities = async () => {
 
   const weatherData = await Promise.all(request);
 
+  // flicker delay
+  await new Promise((res) => setTimeout(res, 1000))
+
   weatherData.forEach((value, index) => {
     savedCities.value[index].weather = value.data;
   });
@@ -42,6 +45,7 @@ const goToCityView = (city) => {
       city: city.city,
     },
     query: {
+      id: city.id,
       lat: city.coords.lat,
       lng: city.coords.lng,
     },
