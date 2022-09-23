@@ -12,8 +12,8 @@ playlist:
     ✔ video 11 @done(22-09-21 11:52)
     ✔ video 12 removing cities https://youtu.be/l31_fyp-AwQ?list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ @done(22-09-22 10:48)
     ✔ video 13 animated skeleton placeholders @done(22-09-22 12:01)
-    ☐ video 14 route transition https://youtu.be/jsvWGacIfSc?list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ
-    ☐ video 15 
+    ✔ video 14 route transition https://youtu.be/jsvWGacIfSc?list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ @done(22-09-23 10:12)
+    ☐ video 15 deploy to netlify
 
 error:
     ☐ error call api openweathermap.org katanya nunggu verifikasi
